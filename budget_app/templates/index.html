@@ -1,0 +1,255 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Index Page</title>
+    <link rel="stylesheet" href=
+"https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+    </script>
+    <script src=
+"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js">
+    </script>
+    <script src=
+"https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js">
+    </script>
+    <script src="https://use.fontawesome.com/e95bb03506.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'budget_app/css/style-sheet.css' %}">
+  </head>
+  <body>
+<!-- NAVIGATION BAR       #37517e-->
+<header id="header" class="fixed-top">
+			<nav class="navbar navbar-expand-sm navbar-dark navbar-right">
+				<h1><a href="index.html"
+					style="color: white;
+						   padding-left: 15px;
+						   padding-top: 15px;
+					       font-size: 37px;
+					       letter-spacing: 2px;
+					       line-height: 1;
+					       font-weight: bold;
+					       ">e-Expenses</h1></a>
+				<!-- navbar-expand-sm navbar-dark -->
+				<ul class="navbar-nav ml-auto">
+        			<li class="nav-item active"><a class="nav-link" href="">Home</a></li>
+        			<li class="nav-item"><a class="nav-link" href='{% url "signup" %}'>Sign Up</a></li>
+        			<li class="nav-item"><a class="nav-link" href='{% url "log" %}'>Login</a></li>
+        			<li class="nav-item"><a class="nav-link" href="#">About</a></li>
+        		</ul>
+        	</nav>
+</header>
+<!-- END NAVIGATION SECTION -->
+
+<!-- INTRODUCTION PART -->
+<section id="intro" class="d-flex align-items-center">
+
+      <div class="container int">
+        <div class="row">
+          <div class="col-lg-6 d-flex flex-column justify-content-center pt-lg-0">
+            <h1>Budgeting made easy!</h1>
+            <h3>This Expense Tracking System is a tool that allows users
+              to keep track of their spending
+              to ensure that they stick to a budget and don’t go overboard.</h3>
+          </div>
+
+	  <div class="col-lg-6 text-center">
+	     <img src="{% static 'budget_app/intro-pic.png' %}" class="img-fluid" alt="expense-pic">
+          </div>
+        </div>
+      </div>
+</section>
+<!-- END INTRODUCTION SECTION -->
+
+<!-- ABOUT SECTION -->
+<section id="about" class="about">
+  <div class="container">
+    <div class="section-title">
+      <h2>ABOUT</h2>
+      <!--  style="font-size: 32px; font-weight: bold; color: #2e4162; " -->
+    </div>
+
+    <div class="row content">
+      <div class="col-lg-6" style="font-size: 17px;">
+        <p>
+          In today’s world, almost everyone is facing money crisis mostly at the end of the month as
+          they cannot remember where all their money is spent and ultimately have to sustain in little money minimizing their essential needs.
+          <b>e-Expenses</b> is a website which will help you to spend your money smartly!
+        </p>
+          <ul>
+            <li><b>Now you can spend your money only on priorities.</b></li>
+            <li><b>Track your daily spendings and budgeting accordingly.</b> </li>
+            <li><b>You can view your spendings in the form of graphs, bar charts etc and reports of daily, weekly and yearly expenses are prepared too.</b> </li>
+          </ul>
+      </div>
+      <div class="col-lg-6 pt-4 pt-lg-0" style="font-size: 17px;">
+        <p>
+          This System is very useful as it is usable by anyone who are willing to manage their expenses and aiming to save for the future investments and many more.
+          There are no range criteria or any kind of profession or gender are focused, it can be used by everyone.
+        </p>
+      </div>
+    </div>
+  </div>
+ </section>
+ <!-- END ABOUT SECTION -->
+
+<!-- FEATURES SECTION -->
+<section id="features">
+	<div class="container">
+		<div class="section-title text-center">
+			<h1> Features </h1>
+			<p>Take control of your finances and start budgeting!</p>
+		</div>
+	</div>
+	<div class="container-fluid">
+		<div class="row"
+			 style="margin: 20px;">
+			<div class="card-deck">
+				<!-- TRACK EXPENSES FEATURE -->
+				<div class="card" style = "box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.8);">
+					<img src="{% static 'budget_app/track-expenses.png' %}"
+	     			style="width: 100%; ">
+	     			<div class="card-body">
+	     				<h4 class="card-title"> Track Expenses </h4>
+	     				<p class="card-text">Maintain a log of all expenses at one place.</p>
+	     			</div>
+				</div>
+				<!-- BUDGET PLANNING FEATURE -->
+				<div class="card" style="box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.8);">
+					<img src="{% static 'budget_app/budget-plan.png' %}"
+	     			style="width: 100%; ">
+	     			<div class="card-body">
+	     				<h4 class="card-title"> Budget Planning </h4>
+	     				<p class="card-text">Spend money only on priorities.</p>
+	     			</div>
+				</div>
+				<!-- MONTHLY EXPENSE FEATURE -->
+				<div class="card" style="box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.8);">
+					<img src= "{% static 'budget_app/monthly-expense.png' %}"
+	     			style="width: 50%; height: auto;">
+	     			<div class="card-body">
+	     				<h4 class="card-title"> Daily, Monthly reports </h4>
+	     				<p class="card-text">Get a better overview of expenses in the format of pie charts and graphs.</p>
+	     			</div>
+				</div>
+				<!-- HISTORY OF EXPENDITURE FEATURE -->
+				<div class="card" style="box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.8);">
+					<img src="{% static 'budget_app/history.png' %}"
+	     			style="width: 50%; height: auto;">
+	     			<div class="card-body">
+	     				<h4 class="card-title"> History of expenditure </h4>
+	     				<p class="card-text">View your previous transactions anytime in just one click!</p>
+	     			</div>
+				</div>
+				<div class="card" style="box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.8);">
+					<img src="{% static 'budget_app/save-money.png' %}"
+	     			style="width: 50%; height: auto;">
+	     			<div class="card-body">
+	     				<h4 class="card-title"> Set aside some amount for various occassions </h4>
+	     				<p class="card-text">Save some money for certain occassions such as Birthdays, Anniversaries, Festivals etc. in advance. </p>
+	     			</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- END FEATURES SECTION -->
+
+<!-- FOOTER SECTION -->
+<section id="footer" class="end">
+ <div class="container">
+   <div class="row">
+    <div class="col-lg-6">
+	<p>
+           <strong>Phone:</strong> +91 1111111111<br>
+           <strong>Email:</strong> abc@gmail.com<br>
+        </p>
+    </div>
+    <div class=" social col-lg-6 pt-4 pt-lg-0" >
+	<h4>Social Media Links</h4>
+	  <a href="https://twitter.com/">
+		<i class="fa fa-twitter" aria-hidden="true"></i>
+	  </a>
+	  <a href="https://facebook.com/">
+		<i class="fa fa-facebook-square" aria-hidden="true"></i>
+	</a>
+	  <a href="https://instagram.com/">
+		<i class="fa fa-instagram" aria-hidden="true"></i>
+	</a>
+	  <a href="https://linkedin.com/">
+		<i class="fa fa-linkedin" aria-hidden="true"></i>
+	</a>
+    </div>
+  </div>
+ </div>
+</section>
+
+
+<!-- JAVASCRIPT SHEET -->
+<script type="text/javascript">
+	$(window).scroll(function(){
+		$('nav').toggleClass('scrolled', $(this).scrollTop() > 50);
+	})
+  //
+	// $(window).scroll(function(){
+	// 	$('intro').toggleClass('intro-load', $(this).scrollTop() > 50);
+	// })
+
+	// window.onload = function(){
+	// 	document.body.intro += " loaded";
+	// }
+</script>
+
+
+
+</body>
+</html>
+
+<!-- <div class="row">
+		<div class="card">
+			<div class="card-body" style="width: 18rem;">
+				<div class="card-img-top">
+	     			<img src="{% static 'budget_app/track-expenses.png' %}"
+	     			style="width: 70%; height: auto;">
+	     		</div>
+				<h4 class="card-title"> Track Expenses </h4>
+				<p class="card-text">Maintain a log of all expenses at one place.</p>
+			</div>
+			<div class="col-lg-4 col-md-4 feature-box">
+				<div class="budget-img">
+	     			<img src="{% static 'budget_app/budget-plan.png' %}"
+	     			style="width: 70%; height: auto;">
+	     		</div>
+				<h4> Budget Planning </h4>
+				<p>Spend money only on priorities.</p>
+			</div>
+			<div class="col-lg-4 col-md-4 feature-box">
+				<div class="budget-img">
+	     			<img src=
+	     			style="width: 50%; height: auto;">
+	     		</div>
+				<h4> Daily, Monthly reports </h4>
+				<p>Get a better overview of expenses in the format of pie charts and graphs.</p>
+			</div>
+
+			<div class="col-lg-4 col-md-4 feature-box">
+				<div>
+					<img src="{% static 'budget_app/history.png' %}"
+					class="img-fluid" alt="expense-pic"
+					style="width: 40%; height: auto;">
+				</div>
+				<h4> History of expenditure </h4>
+				<p>View your previous transactions anytime!</p>
+			</div>
+			<div class="col-lg-4 col-md-4 feature-box">
+				<div><img src="{% static 'budget_app/save-money.png' %}"
+					class="img-fluid" alt="expense-pic" style="width: 40%; height: auto;">
+				</div>
+				<h4> Set aside some amount for various occassions </h4>
+				<p>Save some money for certain occassions such as Birthdays, Anniversaries, Festivals etc. in advance. </p>
+			</div>
+		</div>
+</div> -->

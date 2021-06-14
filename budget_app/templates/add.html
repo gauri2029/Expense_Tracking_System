@@ -1,0 +1,237 @@
+{% extends 'base_template.html'%}
+{% block body%}
+{% csrf_token %}
+{% load static %}
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Mate+SC&display=swap" rel="stylesheet">
+<h4 style="font-family: 'Mate SC', serif; font-size: 50px; font-weight: bold; color: #C2A573; margin-top: 50px; margin-left: 250px;">Add Transaction</h4>
+
+<style>
+.card-header .icons .fa-cc-visa{
+	color: #FFB85F;	
+}
+.card-header .icons .fa-cc-discover{
+	color: #027878;
+}
+.card-body label{
+	font-size: 14px;
+}
+
+.save-button{
+    background-color: #37517E !important;
+    color: white;
+    font-size: 30px;
+
+}
+
+.save-button :focus, .save-button:hover{
+    background-color: #C2A573 !important;
+    color: white;
+}
+
+.form-control {
+		/* border-color: #eee; */
+        /* min-height: 41px; */
+		box-shadow: none !important;
+	}
+    .form-control:focus {
+		border-color: #5cd3b4;
+	}
+    .form-control, .btn {        
+        border-radius: 3px;
+    }
+	.signup-form {
+		width: 600px;
+        height: 80px;
+		margin: 0 auto;
+		padding: 0 0;
+	}
+    .signup-form h5 {
+		color: #C2A573;
+        margin: 0 0 30px 0;
+		display: inline-block;
+		padding: 0 30px 10px 0;
+		border-bottom: 3px solid #C2A573;
+    }
+    .signup-form form {
+		color: rgb(127 122 122);
+		border-radius: 3px;
+    	margin-bottom: 15px;
+        background: #fff;
+        /* box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3); */
+        padding: 30px;
+    }
+	.signup-form .form-group {
+		margin-bottom: 20px;
+	}
+	.signup-form label {
+		font-weight: bold;
+		font-size: 17px;
+	}
+    .signup-form input[type="checkbox"] {
+		margin-top: 2px;
+	}
+    .signup-form .btn {        
+        font-size: 18px;
+        font-weight: bold;
+		background: #5cd3b4;
+		border: none;
+		margin-top: 15px;
+		min-width: 140px;
+    }
+	.signup-form .btn:hover, .signup-form .btn:focus {
+		background: #C2A573;
+        outline: none !important;
+	}
+    .signup-form a {
+		color: #C2A573;
+		text-decoration: underline;
+	}
+	.signup-form a:hover {
+		text-decoration: none;
+	}
+    .signup-form form a {
+		color: #C2A573;
+		text-decoration: none;
+	}	
+	.signup-form form a:hover {
+		text-decoration: underline;
+	}
+</style>
+
+<div class="signup-form">
+    <form method="POST" id="Add_t" class="Add_t">
+        {% csrf_token %}
+		<div class="col-xs-8 col-xs-offset-4">
+			<h5>Add Transaction</h5>
+		</div>		
+        <div class="form-group">
+            <!-- <div class="input-field col s3">
+                <label for="date">Expense Date: </label>
+                <input placeholder='Date of Expense' name="date" id="date" type="date" class='datepicker'>
+            </div> -->
+			<label for="date" class="control-label col-xs-4">Date</label>
+			<div class="col-xs-8">
+                <input type="date" class="form-control" name="date" id="date" placeholder='Date of expense' required="required">
+            </div>        	
+        </div>
+		<div class="form-group">
+            <!-- <div class="input-field col s3">
+                <label for='amount'>Amount: </label>
+                <input placeholder='Amount' name='amount' id='amount' type='text' class='validate'>
+            </div> -->
+			<label class="control-label col-xs-4">Amount</label>
+			<div class="col-xs-8">
+                <input type="text" class="form-control" name="amount" id="amount" placeholder="Amount" required="required">
+            </div>        	
+        </div>
+		<div class="form-group">
+            <!-- <div class="input-field col s3">
+                <label for='desc'>Description: </label>
+                <input placeholder="Description" name="desc" id='desc' type='text' class='validate'>
+            </div> -->
+			<label class="control-label col-xs-4">Description</label>
+			<div class="col-xs-8">
+                <input type="text" class="form-control" name="desc" id="desc" placeholder="Description">
+            </div>        	
+        </div>
+		<div class="form-group">
+            <!-- <div class="input-field col s3">
+                <label for='category'>Category: </label>
+                <input placeholder="category" name="category" id='category' type='text' class='validate'>
+            </div> -->
+			<label class="control-label col-xs-4">Category</label>
+			<div class="col-xs-8">
+                <input type="text" class="form-control" name="category" id="category" placeholder="Category of expense" required="required">
+            </div>        	
+        </div>
+        <button type="submit" class="btn save-button w-100 pb-2 pt-2">Save</button>      
+    </form>
+</div>
+
+<!-- 
+<div style="margin-top: 10px;" class="container form1">
+    <div class="row">
+        <div class="col-md-4 offset-md-3 col-10 offset-1 pl-0 pr-0">
+                <form method="POST" id="Add_t" class="Add_t" >
+                    {% csrf_token %}
+                     <h3 class='center'>Your total budget is: <span style="color:green;"></span> dollars</h3> -->
+                            <!-- <h3 clas='center'>You've spent a total of : <span style="color:red;">{{amount}}</span></h3>
+                            <br>
+                            <br>
+                            <div class="input-field col s3">
+                                <label for="date">Expense Date: </label>
+                                <input placeholder='Date of Expense' name="date" id="date" type="date" class='datepicker'>
+                                
+                            </div>
+                            <br>
+                            <div class="input-field col s3">
+                                <label for='amount'>Amount: </label>
+                                <input placeholder='Amount' name='amount' id='amount' type='text' class='validate'>
+                                
+                            </div>
+                            <br>
+                            <div class="input-field col s3">
+                                <label for='desc'>Description: </label>
+                                <input placeholder="Description" name="desc" id='desc' type='text' class='validate'>
+                                
+                            </div>
+                            <br>
+                            <div class="input-field col s3">
+                                <label for='category'>Category: </label>
+                                <input placeholder="category" name="category" id='category' type='text' class='validate'>
+                                
+                            </div>
+                            <br>
+                            
+                            
+                            <button type="submit" class="btn save-button w-100 pb-2 pt-2">Save</button>
+                </form>
+        </div>
+    </div>
+</div> -->
+
+<!-- <div>
+    <div class="row">
+        <div class="container">
+            <div class="col s6">
+                <table class="striped centered responsive-table">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Amount</th>
+                            <th>Description</th>
+                            <th>Category</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        {% for expense_item in expense_items %}
+                        <tr>
+                            <td>{{ expense_item.date }}</td>
+                            <td>{{ expense_item.amount }}</td>
+                            <td>{{ expense_item.desc}}</td>
+                            <td>{{ expense_item.category}}</td>
+                            <td></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <div class="col s6">
+                <img class='responsive-img' src= "{% static 'budget_app/expense.jpg' %}">
+            </div>
+        </div>
+</div>
+</div> -->
+{%endblock%}
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+        <script type="text/javascript">
+            document.addEventListener('DOMContentLoaded', function() {
+                var elems = document.querySelectorAll('.datepicker');
+                var instances = M.Datepicker.init(elems, {format:'yyyy-mm-dd'});
+            });
+        </script> -->
+

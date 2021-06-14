@@ -1,0 +1,80 @@
+{% extends 'base_template.html'%}
+{% block body%}
+{% csrf_token %}
+{% load static %}
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Mate+SC&display=swap" rel="stylesheet">
+<h4 style="font-family: 'Mate SC', serif; font-size: 50px; font-weight: bold; color: #C2A573; margin-top: 50px; margin-left: 250px;">Budget for the day</h4>
+
+<style>
+table{
+    border-collapse: collapse;
+    width: 70%;
+}
+th,td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even){
+    background-color: #e7e5e5;
+}
+th{
+    background-color:#C2A573 ;
+    color: white;
+}
+
+tr:hover{
+    background-color: #f5f5f5;
+}
+
+</style>
+
+<!-- <table>
+    <tr>
+        <th>Amount</th>
+        <th>Date</th>
+        <th>Category</th>
+    </tr>
+    {% for result in data %}
+    <tr>
+        <td>{{result.budget_amt}}</td>
+        <td>{{result.date}}</td>
+        <td>{{result.category}}</td>
+    </tr>
+    {% endfor %}
+</table> -->
+
+
+<div>
+    <div class="row">
+        <div class="container">
+            <div class="col s6">
+                <table class="striped centered responsive-table">
+                    <thead>
+                        <tr>
+                            <th>Amount</th>
+                            <th>Date</th>
+                            <th>Category</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        {% for result in data %}
+                        <tr>
+                            <td>{{result.budget_amt}}</td>
+                            <td>{{result.date}}</td>
+                            <td>{{result.category}}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <!-- <div class="col s6">
+                <img class='responsive-img' src= "{% static 'budget_app/expense.jpg' %}">
+            </div> -->
+        </div>
+</div>
+</div>
+
+{% endblock %}

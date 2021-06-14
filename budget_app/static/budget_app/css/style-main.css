@@ -1,0 +1,140 @@
+
+/* .main-card {
+  margin-top: 200px;
+} */
+
+
+.list2 {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 12%;
+    /* z-index: 1; */
+    background-color: #f1f1f1;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+ }
+ 
+ .list2 li h5 {
+ display: block;
+ color: #000;
+ padding: 8px 16px;
+ text-decoration: none;
+ }
+ 
+ .list2 li h5.active {
+ background-color: #37517E;
+ /* color: white; */
+ cursor: pointer;
+ }
+ 
+ .list2 li h5:hover:not(.active) {
+ background-color: #C2A573;
+ color: white;
+ cursor: pointer;
+ }
+ 
+ .list2 li i{
+   font-size: 30px;
+   /* padding-left: 55px;*/
+   margin-top: 15px;
+   /* text-align: center; */
+   margin-bottom: 5px;
+ }
+ 
+ .btn-lg1 {
+   font-size: 22px;
+   color: #ffffff;
+   letter-spacing: 0.6px;
+   /* border-radius: 0.25rem; */
+   /* padding: 15px 20px; */
+ }
+ .btn-round1 {
+   /* border-width: 1px; */
+   border-radius: 20px !important;
+   padding: 10px 23px;
+ }
+ .btn-neutral1{
+   background-color: #37517E;
+   color: #ffffff;
+ }
+.btn-neutral1 :hover, .btn-neutral1 :focus {
+   background-color: #C2A573 !important;
+   text-decoration: underline;
+ }
+ 
+
+/* 
+ul.list1 li .nav-link,
+ul.list1 li .nav-link:after,
+ ul.list1 li .nav-link:before {
+   transition: all .5s;
+ } */
+
+ ul.list1 li .nav-link {
+     position: relative;
+     z-index: 1;
+     
+ }
+/* 
+ul.list1 li .nav-link:hover, .nav-link:focus {
+    color: #ffffff;
+    cursor: pointer;
+}
+
+ul.list1 li .nav-link:after{
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    width: 100%;
+    height: 1px;
+    content: '.';
+    color: transparent;
+    background: #C2A573;
+    visibility: hidden;
+    opacity: 0;
+    z-index: -1;
+    cursor: pointer;
+}
+
+ul.list1 li .nav-link:hover:after{
+    opacity: 1;
+    visibility: visible;
+    height: 100%;
+    cursor: pointer;
+}
+
+ */
+
+ 
+ /* .list1 li a.active1 {
+ background-color: #37517E;
+ /* color: black; */
+ /* cursor: pointer; */
+ /* border-radius: 15px; */
+ /* } */
+/*  
+ .list1 li h5:hover:not(.active1) {
+ background-color: #C2A573;
+ color: white;
+ cursor: pointer;
+ } 
+ 
+ .list1 .active1 a {
+   background: #37517E;
+   border-radius: 15px;
+ }
+ 
+ /* .active1 :hover{
+   cursor: pointer;
+   background: black;
+ } 
+ 
+ .list1 .active1 a h5:hover {
+   cursor: pointer;
+   background: white;
+ } */

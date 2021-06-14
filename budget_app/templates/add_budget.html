@@ -1,0 +1,180 @@
+{% extends 'base_template.html'%}
+{% block body%}
+{% csrf_token %}
+{% load static %}
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Mate+SC&display=swap" rel="stylesheet">
+<h4 style="font-family: 'Mate SC', serif; font-size: 50px; font-weight: bold; color: #C2A573; margin-top: 50px; margin-left: 250px;">Budget</h4>
+
+<style>
+.card-header .icons .fa-cc-visa{
+	color: #FFB85F;	
+}
+.card-header .icons .fa-cc-discover{
+	color: #027878;
+}
+.card-body label{
+	font-size: 14px;
+}
+
+.save-button{
+    background-color: #37517E !important;
+    color: white;
+    font-size: 30px;
+
+}
+
+.save-button :focus, .save-button:hover{
+    background-color: #C2A573 !important;
+    color: white;
+}
+
+.form-control {
+		/* border-color: #eee; */
+        /* min-height: 41px; */
+		box-shadow: none !important;
+	}
+    .form-control:focus {
+		border-color: #5cd3b4;
+	}
+    .form-control, .btn {        
+        border-radius: 3px;
+    }
+	.signup-form {
+		width: 600px;
+        height: 80px;
+		margin: 0 auto;
+		padding: 0 0;
+	}
+    .signup-form h5 {
+		color: #C2A573;
+        margin: 0 0 30px 0;
+		display: inline-block;
+		padding: 0 30px 10px 0;
+		border-bottom: 3px solid #C2A573;
+    }
+    .signup-form form {
+		color: rgb(127 122 122);
+		border-radius: 3px;
+    	margin-bottom: 15px;
+        background: #fff;
+        /* box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3); */
+        padding: 30px;
+    }
+	.signup-form .form-group {
+		margin-bottom: 20px;
+	}
+	.signup-form label {
+		font-weight: bold;
+		font-size: 17px;
+	}
+    .signup-form input[type="checkbox"] {
+		margin-top: 2px;
+	}
+    .signup-form .btn {        
+        font-size: 18px;
+        font-weight: bold;
+		background: #5cd3b4;
+		border: none;
+		margin-top: 15px;
+		min-width: 140px;
+    }
+	.signup-form .btn:hover, .signup-form .btn:focus {
+		background: #C2A573;
+        outline: none !important;
+	}
+    .signup-form a {
+		color: #C2A573;
+		text-decoration: underline;
+	}
+	.signup-form a:hover {
+		text-decoration: none;
+	}
+    .signup-form form a {
+		color: #C2A573;
+		text-decoration: none;
+	}	
+	.signup-form form a:hover {
+		text-decoration: underline;
+	}
+
+
+
+
+    .submit_btn{
+        width: 100px;
+        background-color: #37517E;
+        font-size: 18px;
+        color: white;
+    }
+    .submit_btn:focus, .submit_btn:hover{
+        background-color: #C2A573;
+        cursor: pointer;
+    }
+
+</style>
+<h5>Add Budget</h5>
+
+
+<div class="signup-form" style="margin-top: 2px;">
+    <form method="POST" class="Add_b" id="Add_b">
+        {% csrf_token %}
+		<div class="col-xs-8 col-xs-offset-4">
+			<h5>Add Budget</h5>
+		</div>		
+       
+		<div class="form-group">
+            <!-- <div class="input-field col s3">
+                <label for='amount'>Amount: </label>
+                <input placeholder='Amount' name='amount' id='amount' type='text' class='validate'>
+            </div> -->
+			<label class="control-label col-xs-4">Amount</label>
+			<div class="col-xs-8">
+                <input type="number" class="form-control" name="budget_amt" id="budget_amt" placeholder="Amount" required="required">
+            </div>        	
+        </div>
+
+        <div class="form-group">
+            <!-- <div class="input-field col s3">
+                <label for="date">Expense Date: </label>
+                <input placeholder='Date of Expense' name="date" id="date" type="date" class='datepicker'>
+            </div> -->
+			<label for="date" class="control-label col-xs-4">Date</label>
+			<div class="col-xs-8">
+                <input type="date" class="form-control" name="date" id="date" placeholder='Date of expense' required="required">
+            </div>        	
+        </div>
+		<div class="form-group">
+            <!-- <div class="input-field col s3">
+                <label for='category'>Category: </label>
+                <input placeholder="category" name="category" id='category' type='text' class='validate'>
+            </div> -->
+			<label class="control-label col-xs-4">Category</label>
+			<div class="col-xs-8">
+                <input type="text" class="form-control" name="category" id="category" placeholder="Category" required="required">
+            </div>        	
+        </div>
+        <!-- <button type="submit" class="btn save-button w-100 pb-2 pt-2">Save</button>   -->
+        <button type="submit" class="submit_btn w-100 pb-2 pt-2">Save</button> 
+    </form>
+</div>
+
+
+<!-- 
+<div class="details" style="margin-left: 270px;">
+    <form method="POST" class="Add_b" id="Add_b">
+        {% csrf_token %}
+<label for="budget_amt">Budget Amount</label>
+<input type="number" name="budget_amt" id="budget_amt" required>
+
+<label for="date">Date</label>
+<input type="date" name="date" id="date" required>
+
+<label for="category">Category</label>
+<input type="text" name="category" id="category" required>
+
+<button type="submit" class="submit_btn">Save</button>
+    </form>
+</div> -->
+
+{% endblock %}

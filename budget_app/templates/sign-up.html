@@ -1,0 +1,172 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>Sign Up!</title>
+    <link rel="stylesheet" href = "https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src = "https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src = "https://use.fontawesome.com/e95bb03506.js"></script>
+    <link rel="stylesheet" type="text/css" href = "{% static 'budget_app/css/style-signup.css' %}">
+</head>
+
+<body>
+<!-- NAVIGATION BAR       #37517e-->
+<div style="height: 72px;">
+    <nav class="navbar navbar-expand-sm navbar-dark fixed-top" style="background: white; ">
+      <h1  class="btn btn-neutral1 btn-round1 btn-lg1"><a  style="color: white;" href="#">e-Expenses</h1>
+      <ul class="navbar-nav ml-auto" style="font-size: 17px; letter-spacing: 0.6px; ">
+        <li class="nav-item">
+          <a class="nav-link" style="color: black;" href="">Home</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" style="color: white;" href="#">Sign Up</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" style="color: black;" href="#">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" style="color: black;" href="#">About</a>
+        </li>
+      </ul>
+    </nav>
+</div>
+<!-- <section id="intro" class="d-flex align-items-center"style="background: #162134; color: white; height: 88vh;" > -->
+<!-- <div  style="background:#C2A573; width: 100%;"> -->
+      <!-- <div class="container" >
+        <div class="row">
+
+          <div class="card" >
+            <div class="card-header">
+              <h1 style="color: #ffffff; text-align: center;">Sign Up!</h1>
+          </div>
+          {% if form.errors %}
+          <h3>{{ form.errors }}</h3>
+          {% else %}
+          <div class="card-body">
+            <form method="POST" id="UserReg" class="UserReg" style="text-align:center; padding-top: 15px;">
+                      {% csrf_token %}
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="username" id="username" placeholder="Your Name">
+                        </div>
+			                  <div class="form-group">
+                            <input type="text" class="form-control" name="number" id="number" placeholder="Phone Number">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" name="email" id="email" placeholder="Your Email">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="password" id="password" placeholder="Password">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" name="re_password" id="re_password" placeholder="Repeat your password">
+                        </div>
+
+                        <div class="form-group">
+              						<input type="submit" value="SignUp" class="btn sign_btn">
+              					</div>
+            </form>
+            {%endif%}
+          </div>
+          <div class="card-footer">
+            <div class="d-flex justify-content-center links1">
+              Already have an account? <a href="#">Login</a>
+            </div>
+          </div>
+        </div>
+
+	  <div class="col-lg-6 text-center">
+	     <img src="{% static 'budget_app/signup.png' %}" class="img-fluid" alt="signup-pic"
+		style="max-width: 100%; height: auto; ">
+          </div>
+        </div>
+      </div> -->
+
+      <div class="container-fluid stylish-form">
+         <!-- <h2 class="text-center">Stylish Signup Page Using Bootstrap</h2> -->
+      <div class="row mar20" >
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="inner-section">
+                  {% if form.errors %}
+                  <h3>{{ form.errors }}</h3>
+                  {% else %}
+                  <form method="POST" id="UserReg" class="UserReg" >
+                    {% csrf_token %}
+                    <div class="mar20 inside-form">
+                      <h2 class="font_white text-center">SIGN UP</h2>
+                      <ul>
+                        <li class="icon-holder dsp-flex">
+                          <a href="www.facebook.com"></a>
+                          <i class="fa fa-facebook "></i>
+                        </li>
+                        <li class="icon-holder dsp-flex">
+                          <a href="www.twitter.com"></a>
+                          <i class="fa fa-twitter "></i>
+                        </li>
+                        <li class="icon-holder dsp-flex">
+                          <a href="www.instagram.com"></a>
+                          <i class="fa fa-instagram "></i>
+                        </li>
+                      </ul>
+                      <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-pencil "></i></span>
+                        <input type="text" class="form-control"name="username" id="username" placeholder="Your Name">
+                      </div>
+                      <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-pencil "></i></span>
+                        <input type="text" class="form-control" name="number" id="number" placeholder="Phone Number">
+                      </div>
+                      <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-envelope "></i></span>
+                        <input type="email" class="form-control" name="email" placeholder="Email">
+                      </div>
+                      <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-lock "></i></span>
+                        <input type="password" class="form-control" name="password" id="password" placeholder="Password">
+                      </div>
+                      <div class="footer text-center">
+                        <input type="submit" value="SignUp" class="btn btn-neutral btn-round btn-lg">
+                      </div>
+                    </div>
+                  </form>
+                  {%endif%}
+                </div>
+              </div>
+            </div>
+
+            <!-- <a href="fb.com/ervijender"><h2 class="text-center font_white">Thank You For Visiting This Snippet</h2></a> -->
+        </div>
+
+
+    <!-- </section> -->
+<!-- </div> -->
+
+<!-- Footer Part -->
+<!-- <div id="footer" class="end" style="background: #37517e; color: #ffffff; bottom: 0; position: fixed; width: 100%; height: auto;">
+ <div class="container">
+   <div class="row" style="padding-bottom: 10px; padding-top: 10px;">
+    <div class="col-lg-6">
+	<p>
+           <strong>Phone:</strong> +91 1111111111<br>
+           <strong>Email:</strong> abc@gmail.com<br>
+        </p>
+    </div>
+    <div class="col-lg-6 pt-4 pt-lg-0" >
+	<h4>Social Media Links</h4>
+	  <a href="https://twitter.com/">
+		<i class="fa fa-twitter" aria-hidden="true" style="font-size: 22px; padding-top: 5px; margin-right: 6px;"></i>
+	  <a href="https://facebook.com/">
+		<i class="fa fa-facebook-square" aria-hidden="true" style="font-size: 22px; padding-top: 5px; margin-right: 6px;"></i>
+	  <a href="https://instagram.com/">
+		<i class="fa fa-instagram" aria-hidden="true" style="font-size: 22px; padding-top: 5px; margin-right: 6px;"></i>
+	  <a href="https://linkedin.com/">
+		<i class="fa fa-linkedin" aria-hidden="true" style="font-size: 22px; padding-top: 5px; margin-right: 6px;"></i>
+    </div>
+  </div>
+ </div>
+</div> -->
+
+</body>
+</html>
