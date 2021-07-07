@@ -1,0 +1,52 @@
+{% extends 'base_template.html'%}
+{% block body%}
+{% load static %}
+
+<script>
+window.onload = function () {
+
+var chart = new CanvasJS.Chart("chartContainer", {
+	theme: "dark2",
+	exportFileName: "Doughnut Chart",
+	exportEnabled: true,
+	animationEnabled: true,
+	title:{
+		text: "Daily Expense"
+	},
+	legend:{
+		cursor: "pointer",
+		itemclick: explodePie
+	},
+	data: [{
+		type: "doughnut",
+		innerRadius: 90,
+		showInLegend: true,
+		toolTipContent: "<b>{name}</b>: Rs. {y} (#percent%)",
+		indexLabel: "{name} - #percent%",
+		dataPoints: [
+			{ y: 536.45, name: "Food" },
+			{ y: 120, name: "Medicines" },
+			{ y: 300, name: "Bank" },
+			{ y: 430, name: "Travel" },
+		]
+	}]
+});
+chart.render();
+
+function explodePie (e) {
+	if(typeof (e.dataSeries.dataPoints[e.dataPointIndex].exploded) === "undefined" || !e.dataSeries.dataPoints[e.dataPointIndex].exploded) {
+		e.dataSeries.dataPoints[e.dataPointIndex].exploded = true;
+	} else {
+		e.dataSeries.dataPoints[e.dataPointIndex].exploded = false;
+	}
+	e.chart.render();
+}
+
+}
+</script>
+</head>
+<body>
+<div id="chartContainer" style=" margin-top: 75px; margin-left: 400px; height: 370px; width: 40%;"></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+{% endblock %}

@@ -14,49 +14,97 @@
 
   <body>
     <div>
-    <ul style="text-align: center; padding-top: 20px;" class="list2">
-      <li>
-        <i class="fa fa-wallet"></i>
-        <h5 class="active" style="text-align: center;"><a style="color: whitesmoke;" href='{% url "add_item" %}'>Add Transaction</a></h5>
-        <!-- <h5 class="active" href='{% url "add_item" %}' style="color: white; text-align: center;">Add Transaction</h5> -->
-      </li>
-      <li>
-        <i class="fa fa-coins"></i>
-        <h5 style="text-align: center;">
-          <a style="color: black;" href='{% url "add_budget" %}'>Add Budget</a>
-        </h5>
-      </li>
-      <li>
-        <i class="fa fa-chart-line"></i>
-        <h5 style="text-align: center;">
-          <a style="color: black;" href='{% url "budget_success/" %}'>Budget Summary</a> 
-        </h5>
-      </li>
-      <li>
-        <i class="fa fa-piggy-bank"></i>
-        <h5 style="text-align: center;">
-          <a style="color: black;" href='{% url "transaction_success/" %}'>Transactions</a>
-        </h5>
-      </li>
-    </ul>
-  </div>
+      <ul style="text-align: center; padding-top: 20px;" class="list2">
+        <li>
+          <i class="fa fa-wallet"></i>
+          <h5 class="active" style="text-align: center;"><a style="color: whitesmoke;" href='{% url "add_item" %}'>Add Transaction</a></h5>
+          <!-- <h5 class="active" href='{% url "add_item" %}' style="color: white; text-align: center;">Add Transaction</h5> -->
+        </li>
+        <li>
+          <i class="fa fa-coins"></i>
+          <h5 style="text-align: center;">
+            <a style="color: black;" href='{% url "add_budget" %}'>Add Budget</a>
+          </h5>
+        </li>
+        <li>
+          <i class="fa fa-chart-line"></i>
+          <h5 style="text-align: center;">
+            <a style="color: black;" href='{% url "budget_success/" %}'>Budget Summary</a> 
+          </h5>
+        </li>
+        <li>
+          <i class="fa fa-piggy-bank"></i>
+          <h5 style="text-align: center;">
+            <a style="color: black;" href='{% url "transaction_success/" %}'>Transactions</a>
+          </h5>
+        </li>
+  
+        <li>
+          <i class="fa fa-chart-line"></i>
+          <h5 style="text-align: center;">
+            <a style="color: black;" href='{% url "report" %}'>Report</a>
+          </h5>
+        </li>
+      </ul>
+    </div>
 
-  <div style="height: 68px">
+  <!-- <header id="header" class="fixed-top" style="margin-left: 200px;"> -->
+    <div style="height: 68px">
+    <nav class="navbar navbar-expand-sm navbar-dark navbar-right" style="color: black;  margin-left: 185px;
+    padding-top: 18px;">
+      <h1 class="btn btn-neutral1 btn-round1 btn-lg1"><a href='http://127.0.0.1:8000/'
+        style="color: white;
+             padding-left: 15px;
+             padding-top: 15px;
+               font-size: 33px;
+               letter-spacing: 2px;
+               line-height: 1;
+               ">e-Expenses</h1></a>
+               <!-- <h1  class=""><a style="color: black;" href='http://127.0.0.1:8000/'>e-Expenses</a></h1> -->
+      <!-- navbar-expand-sm navbar-dark -->
+      <ul class="navbar-nav ml-auto list1" >
+            <li  class="nav-item active">
+              <a style="color: black;" class="nav-link" href='{% url "transaction_success/" %}'>Home</a>
+            </li>
+            <li class="nav-item">
+              <a style="color: black;" class="nav-link" href='{% url "logout" %}'>Logout</a>
+            </li>
+          </ul>
+          <!-- <ul class="navbar-nav ml-auto list1" style="font-size: 17px; letter-spacing: 0.6px; ">
+            <li class="nav-item"><a class="nav-link" style="color: black;" href="http://127.0.0.1:8000/">Home</a></li>
+             <li class="nav-item"><a class="nav-link" style="color: black;" href="add_transaction">Add Transactions</a></li>
+            <li class="nav-item"><a class="nav-link" style="color: black;" href='{% url "logout" %}'>Logout</a></li>
+        </ul> -->
+        </nav>
+        </div>
+
+       
+
+
+
+
+
+
+<!-- </header> -->
+
+  <!-- <div style="height: 68px">
       <nav class="navbar navbar-expand-sm navbar-dark fixed-top"
       style="
       background: white;
       margin-left: 185px;
       padding-top: 18px;
       z-index: -1;">
-       <!-- border-bottom: 1px solid black;  -->
-        <h1  class="btn btn-neutral1 btn-round1 btn-lg1"><a style="color: white;" href='{% url "logout" %}'>e-Expenses</a></h1>
+       border-bottom: 1px solid black; 
+        "btn btn-neutral1 btn-round1 btn-lg1 
+         <h1  class=""><a style="color: black;" href='http://127.0.0.1:8000/'>e-Expenses</a></h1>
+        <a style="margin-left: 250px; color: #37517E; font-family: 'Mate SC', serif;" href='{% url "myview" %}'>Download data</a>
         <ul class="navbar-nav ml-auto list1" style="font-size: 17px; letter-spacing: 0.6px; ">
             <li class="nav-item"><a class="nav-link" style="color: black;" href="http://127.0.0.1:8000/">Home</a></li>
-            <!-- <li class="nav-item"><a class="nav-link" style="color: black;" href="add_transaction">Add Transactions</a></li> -->
+             <li class="nav-item"><a class="nav-link" style="color: black;" href="add_transaction">Add Transactions</a></li>
             <li class="nav-item"><a class="nav-link" style="color: black;" href='{% url "logout" %}'>Logout</a></li>
         </ul>
       </nav>
-  </div>
+  </div> -->
     {% block body %}
     {% endblock %}
   </body>

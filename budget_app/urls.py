@@ -11,5 +11,7 @@ urlpatterns = [
 	path('add_item', views.add_item, name = 'add_item'),
 	path('add_budget', views.add_budget, name = 'add_budget'),
 	path('transaction_success/', views.transaction_success, name = "transaction_success/"),
-	path('budget_success/', views.budget_success, name = "budget_success/")
+	path('budget_success/', views.budget_success, name = "budget_success/"),
+	path('myview/', views.myview, name='myview'),
+	path('report', views.report, name = 'report')
 ]

@@ -10,6 +10,7 @@
 table{
     border-collapse: collapse;
     width: 70%;
+    margin-top: 20px;
 }
 th,td {
     text-align: left;
@@ -48,7 +49,7 @@ tr:hover{
 
 <div>
     <div class="row">
-        <div class="container">
+        <div style="margin-left: 230px;" class="container">
             <div class="col s6">
                 <table class="striped centered responsive-table">
                     <thead>
@@ -76,5 +77,9 @@ tr:hover{
         </div>
 </div>
 </div>
+
+<!-- <div style="margin-left: 500px;">
+    <a href='{% url "myview" %}'>MYVIEW</a>
+</div> -->
 
 {% endblock %}

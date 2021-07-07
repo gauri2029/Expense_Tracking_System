@@ -5,7 +5,11 @@
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Mate+SC&display=swap" rel="stylesheet">
 <h4 style="font-family: 'Mate SC', serif; font-size: 50px; font-weight: bold; color: #C2A573; margin-top: 50px; margin-left: 250px;">Previous Transactions</h4>
+<a style="margin-left: 250px; color: #37517E; font-family: 'Mate SC', serif;" href='{% url "myview" %}'>Download data</a>
 
+<!-- <div style="margin-left: 400px;">
+    <a href='{% url "myview" %}'>Download data</a>
+</div> -->
 <style>
 .card-header .icons .fa-cc-visa{
 	color: #FFB85F;	
@@ -30,8 +34,9 @@
 }
 
 table{
+    margin-top: 20px;
     border-collapse: collapse;
-    width: 80%;
+    width: 84%;
 }
 th,td {
     text-align: left;
@@ -52,21 +57,16 @@ tr:hover{
 
 </style>
 
-<div class="nav-wrapper">
-    <ul class="right">
-        <li><a href='{% url "logout" %}' class='btn'>Logout</a></li>
-    </ul>
-</div>
-
 
 <div>
     <div class="row">
-        <div class="container">
+        <div style="margin-left: 270px;" class="container">
             <div class="col s6">
                 <table class="striped centered responsive-table">
                     <thead>
                         <tr>
                             <th>Date</th>
+                            
                             <th>Amount</th>
                             <th>Description</th>
                             <th>Category</th>
