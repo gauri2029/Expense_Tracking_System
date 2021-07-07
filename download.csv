@@ -1,11 +1,11 @@
-﻿ID,date,Amount,description,category
-1,2021-06-01,100.0,food,food
-2,2021-06-02,150.0,medicines,meds
-3,2021-05-31,150.0,bank,bank
-4,2021-06-04,20.0,food,food
-5,2021-06-05,50.0,Emergency medicines,meds
-6,2021-04-10,100.0,bank,bank
-7,2021-06-01,256.45,food1,food
-8,2021-06-04,179.05,bank,bank
-9,2021-05-27,500.0,medicines,meds
-10,2021-06-11,160.0,Coffee and Breakfast,food
+﻿date,desc,category,amount
+01.06.2021.,food,food,100
+02.06.2021.,medicines,meds,150
+03.06.2021.,bank,bank,150
+04.06.2021.,food,food,20
+05.06.2021.,Emergency medicines,meds,50
+10.06.2021.,bank,bank,100
+10.06.2021.,food1,food,256.45
+11.06.2021.,bank,bank,179.05
+12.06.2021.,medicines,meds,500
+14.06.2021.,Coffee and Breakfast,food,160
